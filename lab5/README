@@ -1,1 +1,46 @@
-lab 5
+Tasks (3)
+1. Define the Category → Product Hierarchy
+Restructure your product data so that every product belongs to a category. The application should follow the hierarchy: Category ⇒ Product Items.
+Create a Category interface (e.g., category.model.ts) with at least:
+id: number — unique identifier for the category
+name: string — category display name (e.g., "Smartphones", "Laptops", "Headphones", "Tablets")
+Update your Product interface to include a likes: number field (initialized to 0) and a categoryId: number field
+Create exactly 4 categories, each containing exactly 5 products (20 products total)
+All products must still link to real items on kaspi.kz
+Store the data in a service (e.g., ProductService) or in a separate data file — do not hardcode arrays directly inside components
+Tip: Choose categories that make sense together, for example: Smartphones, Laptops, Headphones, and Tablets. Each should have 5 real products from kaspi.kz.
+
+2. Build the Component Architecture
+Refactor your application into 3 main components with clearly defined responsibilities:
+a. AppComponent (root component)
+Displays the list of categories (e.g., as buttons, tabs, cards, or a sidebar navigation)
+Tracks which category is currently selected
+When a category is clicked, the products belonging to that category are passed to ProductListComponent
+If no category is selected, display a welcome message or prompt the user to select a category
+b. ProductListComponent
+Receives an array of products via input() or @Input()
+Renders a ProductItemComponent for each product using @for or *ngFor
+Listens for delete events from child ProductItemComponent and removes the product from the list
+Displays a message (e.g., "No products in this category") if the product list is empty after deletions
+c. ProductItemComponent
+Receives a single product object via input() or @Input()
+Displays product details: image, name, description, price, rating, and number of likes
+Contains a "Like" button — clicking it increments the likes counter for that product
+Contains a "Delete" button — clicking it emits an event to the parent via output() or @Output() to remove the product
+Retains the "Share" button from Lab 4 (WhatsApp / Telegram)
+
+3. Implement Interactive Features
+a. Like Functionality
+Each product card displays its current number of likes (e.g., "❤ 12")
+Clicking the "Like" button increments the likes count by 1
+The like count should update immediately in the UI
+Optional: Add visual feedback (e.g., heart icon animation, color change on click)
+b. Delete Functionality
+Each product card has a "Delete" button (e.g., a trash icon or red button)
+Clicking "Delete" removes the product from the displayed list
+The delete event must be emitted from ProductItemComponent to ProductListComponent using output() or @Output()
+Optional: Add a confirmation dialog before deletion (e.g., "Are you sure?")
+c. Category Switching
+Clicking a category should immediately display its products
+Highlight or visually indicate the currently selected category
+Use @if or *ngIf to show/hide the product list based on selection
