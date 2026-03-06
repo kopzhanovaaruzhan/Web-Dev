@@ -1,0 +1,12 @@
+In this lab you will build a strong foundation in Python programming. You will learn Python syntax, data types, sequence containers, functions, modules, and Object-Oriented Programming through hands-on coding challenges. This prepares you for building backend web applications with Django in upcoming labs.
+
+Learning Objectives
+By the end of this lab, you will be able to:
+- Understand Python syntax, variables, and basic data types (int, float, str, bool)
+- Use conditional statements (if/elif/else) and comparison operators
+- Implement loops (for and while) for iteration
+- Work with sequence containers: lists, tuples, dictionaries, and sets
+- Define and call functions with parameters, return values, and default arguments
+- Organize code using modules and imports
+- Apply Object-Oriented Programming: classes, objects, methods, and inheritance
+- Follow the PEP 8 Style Guide for clean, readable code
