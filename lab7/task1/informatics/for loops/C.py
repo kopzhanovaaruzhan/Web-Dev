@@ -1,0 +1,10 @@
+import math
+
+a = int(input())
+b = int(input())
+
+for i in range(a, b + 1):
+    if int(math.sqrt(i))==int(math.ceil(math.sqrt(i))):
+        print(i)
+    else:
+        continue
